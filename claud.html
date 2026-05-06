@@ -1895,9 +1895,8 @@
 
     <!-- CONTACT -->
     <section id="contact">
-        <!-- CHANGE VIDEO: Contact Section Background - replace src -->
         <div class="contact-bg">
-            <video autoplay muted loop playsinline src="my3.mov"></video>
+            <video id="contactVideo" autoplay muted loop playsinline src="my3.mov"></video>
         </div>
         <div class="contact-glass">
             <div class="contact-wrap">
@@ -1964,6 +1963,20 @@
     </footer>
 
     <script>
+        // ==========================================
+        // SITE CONFIGURATION - CHANGE VIDEOS HERE
+        // ==========================================
+        // Change the file names below to update your background videos
+        const CONTACT_VIDEO_SRC = "my3.mp4";
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            const contactVideo = document.getElementById('contactVideo');
+            if (contactVideo) {
+                contactVideo.src = CONTACT_VIDEO_SRC;
+            }
+        });
+        // ==========================================
+
         // Hero video background: loop with 0.5s delay
         const heroVideo = document.getElementById('heroVideo');
         if (heroVideo) {
